@@ -11,7 +11,7 @@ class HermesEngine < Formula
   def install
     system "cmake", "-S", ".", "-B", ".", "-G", "Ninja", "--install-prefix", prefix, *std_cmake_args
     system "ninja", "-j8"
-    mkdir_p prefix, force: true
+    mkdir_p prefix
     cp_r "./", prefix
   end
 
